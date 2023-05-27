@@ -1,27 +1,31 @@
 {
   "files": {
     "main.css": "/survey_test_task/static/css/main.80777074.css",
-    "main.js": "/survey_test_task/static/js/main.6d659caa.js",
+    "main.js": "/survey_test_task/static/js/main.58041178.js",
     "static/js/812.35dfe2e4.chunk.js": "/survey_test_task/static/js/812.35dfe2e4.chunk.js",
     "static/js/751.58249a2c.chunk.js": "/survey_test_task/static/js/751.58249a2c.chunk.js",
     "static/js/637.58d0a224.chunk.js": "/survey_test_task/static/js/637.58d0a224.chunk.js",
-    "static/js/414.e10b3979.chunk.js": "/survey_test_task/static/js/414.e10b3979.chunk.js",
+    "static/js/414.10dd503b.chunk.js": "/survey_test_task/static/js/414.10dd503b.chunk.js",
     "static/js/60.4c021998.chunk.js": "/survey_test_task/static/js/60.4c021998.chunk.js",
     "static/js/580.671b96ee.chunk.js": "/survey_test_task/static/js/580.671b96ee.chunk.js",
+    "static/js/419.956b786b.chunk.js": "/survey_test_task/static/js/419.956b786b.chunk.js",
+    "static/js/429.df815422.chunk.js": "/survey_test_task/static/js/429.df815422.chunk.js",
     "static/js/502.201857a7.chunk.js": "/survey_test_task/static/js/502.201857a7.chunk.js",
     "index.html": "/survey_test_task/index.html",
     "main.80777074.css.map": "/survey_test_task/static/css/main.80777074.css.map",
-    "main.6d659caa.js.map": "/survey_test_task/static/js/main.6d659caa.js.map",
+    "main.58041178.js.map": "/survey_test_task/static/js/main.58041178.js.map",
     "812.35dfe2e4.chunk.js.map": "/survey_test_task/static/js/812.35dfe2e4.chunk.js.map",
     "751.58249a2c.chunk.js.map": "/survey_test_task/static/js/751.58249a2c.chunk.js.map",
     "637.58d0a224.chunk.js.map": "/survey_test_task/static/js/637.58d0a224.chunk.js.map",
-    "414.e10b3979.chunk.js.map": "/survey_test_task/static/js/414.e10b3979.chunk.js.map",
+    "414.10dd503b.chunk.js.map": "/survey_test_task/static/js/414.10dd503b.chunk.js.map",
     "60.4c021998.chunk.js.map": "/survey_test_task/static/js/60.4c021998.chunk.js.map",
     "580.671b96ee.chunk.js.map": "/survey_test_task/static/js/580.671b96ee.chunk.js.map",
+    "419.956b786b.chunk.js.map": "/survey_test_task/static/js/419.956b786b.chunk.js.map",
+    "429.df815422.chunk.js.map": "/survey_test_task/static/js/429.df815422.chunk.js.map",
     "502.201857a7.chunk.js.map": "/survey_test_task/static/js/502.201857a7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.80777074.css",
-    "static/js/main.6d659caa.js"
+    "static/js/main.58041178.js"
   ]
 }
