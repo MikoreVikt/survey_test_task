@@ -1,7 +1,7 @@
 import { useEffect, lazy } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from 'redux/authRedux/operations';
-import { selectIsRefreshing } from 'redux/authRedux/selectors';
+import { selectIsRefreshing, selectIsLoading } from 'redux/authRedux/selectors';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from '../Layout/Layout';
 import { Loader } from 'components/Loader/Loader';
@@ -17,16 +17,19 @@ const Account = lazy(() =>
 );
 const Survey1 = lazy(() => import('../Surveys/FirstSurvey'));
 const Survey2 = lazy(() => import('../Surveys/SecondSurvey'));
+const Result1 = lazy(() => import('../SurveysResults/FirstSurveysResults'));
+const Result2 = lazy(() => import('../SurveysResults/SecondSurveysResults'));
 
 export const App = () => {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
+  const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return isRefreshing ? (
+  return isRefreshing || isLoading ? (
     <Loader />
   ) : (
     <>
@@ -66,6 +69,18 @@ export const App = () => {
             path="/second_survey"
             element={
               <PrivatedRoute redirectTo="/login" component={<Survey2 />} />
+            }
+          />
+          <Route
+            path="/first_surveys_results"
+            element={
+              <PrivatedRoute redirectTo="/login" component={<Result1 />} />
+            }
+          />
+          <Route
+            path="/second_surveys_results"
+            element={
+              <PrivatedRoute redirectTo="/login" component={<Result2 />} />
             }
           />
         </Route>
