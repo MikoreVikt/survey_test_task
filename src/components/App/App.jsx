@@ -2,10 +2,15 @@ import { useEffect, lazy } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from 'redux/authRedux/operations';
 import { selectIsRefreshing, selectIsLoading } from 'redux/authRedux/selectors';
+import { selectIsLoadingSending } from 'redux/surveysRedux/selectors';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from '../Layout/Layout';
 import { Loader } from 'components/Loader/Loader';
-import { RestrictedRoute } from 'components/RestrictedRoute';
+import {
+  RestrictedRoute,
+  RestrictedRouteAfterFirstAnswer,
+  RestrictedRouteAfterSecondAnswer,
+} from 'components/RestrictedRoute';
 import { PrivatedRoute } from 'components/PrivateRoute';
 import { ToastContainer } from 'react-toastify';
 
@@ -24,12 +29,13 @@ export const App = () => {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
   const isLoading = useSelector(selectIsLoading);
+  const isLoadingSending = useSelector(selectIsLoadingSending);
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return isRefreshing || isLoading ? (
+  return isRefreshing || isLoading || isLoadingSending ? (
     <Loader />
   ) : (
     <>
@@ -51,6 +57,24 @@ export const App = () => {
             path="/login"
             element={
               <RestrictedRoute redirectTo="/account" component={<Login />} />
+            }
+          />
+          <Route
+            path="/first_survey"
+            element={
+              <RestrictedRouteAfterFirstAnswer
+                redirectTo="/account"
+                component={<Survey1 />}
+              />
+            }
+          />
+          <Route
+            path="/second_survey"
+            element={
+              <RestrictedRouteAfterSecondAnswer
+                redirectTo="/account"
+                component={<Survey2 />}
+              />
             }
           />
           <Route

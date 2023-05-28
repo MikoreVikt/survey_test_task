@@ -1,5 +1,10 @@
-export const selectAnswers = state => state.contacts.answers;
+export const selectAnswers = state => state.surveys.answers;
 
-export const selectIsLoading = state => state.contacts.isLoading;
+export const selectFirstAnswerStatus = state => state.surveys.firstAnswerStatus;
 
-export const selectError = state => state.contacts.error;
+export const selectSecondAnswerStatus = state =>
+  state.surveys.secondAnswerStatus;
+
+export const selectIsLoadingSending = state => state.surveys.isLoading;
+
+export const selectError = state => state.surveys.error;

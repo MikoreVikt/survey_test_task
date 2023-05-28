@@ -1,9 +1,22 @@
 import { useSelector } from 'react-redux';
 import { selectUserStatus } from 'redux/authRedux/selectors';
-import { Wrapp, Text, BtnsWrapp, StyledLink } from './PersonalAccount.styled';
+import {
+  Wrapp,
+  Text,
+  BtnsWrapp,
+  StyledLink,
+  DisBtn,
+} from './PersonalAccount.styled';
+import {
+  selectFirstAnswerStatus,
+  selectSecondAnswerStatus,
+} from 'redux/surveysRedux/selectors';
 
 export const PersonalAccount = () => {
   const status = useSelector(selectUserStatus);
+
+  const firstAnswerStatus = useSelector(selectFirstAnswerStatus);
+  const secondAnswerStatus = useSelector(selectSecondAnswerStatus);
 
   return (
     <Wrapp>
@@ -19,10 +32,22 @@ export const PersonalAccount = () => {
           </Text>
 
           <BtnsWrapp>
-            <StyledLink to="/first_survey">First part of the survey</StyledLink>
-            <StyledLink to="/second_survey">
-              Second part of the survey
-            </StyledLink>
+            {firstAnswerStatus === false ? (
+              <StyledLink to="/first_survey">
+                First part of the survey
+              </StyledLink>
+            ) : (
+              <DisBtn>Answers sent</DisBtn>
+            )}
+            {firstAnswerStatus === true && secondAnswerStatus === false ? (
+              <StyledLink to="/second_survey">
+                Second part of the survey
+              </StyledLink>
+            ) : secondAnswerStatus === false ? (
+              <DisBtn>Second part of the survey</DisBtn>
+            ) : (
+              <DisBtn>Answers sent</DisBtn>
+            )}
           </BtnsWrapp>
         </>
       ) : (

@@ -6,72 +6,72 @@ import { addSecondAnswer } from 'redux/surveysRedux/operations';
 import { errorMessage, successMessage } from 'services/notifications';
 
 const SecondSurvey = () => {
-  const [firstQuestion, setFirstQuestion] = useState('');
-  const [secondQuestion, setSecondQuestion] = useState('');
-  const [thirdQuestion, setThirdQuestion] = useState('');
+  const [position, setPosition] = useState('');
+  const [stack, setStack] = useState('');
+  const [salary, setSalary] = useState('');
 
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (firstQuestion.length > 20 || firstQuestion.length < 3) {
-      return errorMessage(`Please enter a valid name!`);
+    if (position.length > 50 || position.length < 3) {
+      return errorMessage(`Please enter a valid value!`);
     }
-    if (secondQuestion.length > 20 || secondQuestion.length < 3) {
-      return errorMessage(`Please enter a valid name!`);
+    if (stack.length > 50 || stack.length < 3) {
+      return errorMessage(`Please enter a valid value!`);
     }
-    if (thirdQuestion.length > 20 || thirdQuestion.length < 3) {
-      return errorMessage(`Please enter a valid name!`);
+    if (salary.length > 20 || salary.length < 3) {
+      return errorMessage(`Please enter a valid value!`);
     }
 
-    dispatch(addSecondAnswer({ firstQuestion, secondQuestion, thirdQuestion }));
+    dispatch(addSecondAnswer({ position, stack, salary }));
     successMessage(` Successfully sent! `);
-    setFirstQuestion('');
-    setSecondQuestion('');
-    setThirdQuestion('');
+    setPosition('');
+    setStack('');
+    setSalary('');
   };
 
   return (
     <PersonalAccountWrapper>
       <Form onSubmit={handleSubmit} autoComplete="off">
         <Label>
-          Fourth question
+          Desired job position
           <Input
-            onChange={e => setFirstQuestion(e.currentTarget.value)}
-            value={firstQuestion}
+            onChange={e => setPosition(e.currentTarget.value)}
+            value={position}
             type="text"
-            name="firstQuestion"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            name="position"
+            placeholder="Full Stack developer"
             required
           />
         </Label>
 
         <Label>
-          Fifth question
+          Technology stack
           <Input
-            onChange={e => setSecondQuestion(e.currentTarget.value)}
-            value={secondQuestion}
+            onChange={e => setStack(e.currentTarget.value)}
+            value={stack}
             type="text"
-            name="secondQuestion"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            name="stack"
+            placeholder="JavaScript, TypeScript, React.js, Node.js"
             required
           />
         </Label>
 
         <Label>
-          Six question
+          Desired Salary
           <Input
-            onChange={e => setThirdQuestion(e.currentTarget.value)}
-            value={thirdQuestion}
+            onChange={e => setSalary(e.currentTarget.value)}
+            value={salary}
             type="text"
-            name="thirdQuestion"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            name="salary"
+            placeholder="400$ - 500$"
             required
           />
         </Label>
 
-        <Btn type="onSubmit">Send</Btn>
+        <Btn type="submit">Send</Btn>
       </Form>
     </PersonalAccountWrapper>
   );

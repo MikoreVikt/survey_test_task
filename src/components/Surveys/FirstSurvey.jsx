@@ -6,72 +6,69 @@ import { addFirstAnswer } from 'redux/surveysRedux/operations';
 import { errorMessage, successMessage } from 'services/notifications';
 
 const FirstSurvey = () => {
-  const [firstQuestion, setFirstQuestion] = useState('');
-  const [secondQuestion, setSecondQuestion] = useState('');
-  const [thirdQuestion, setThirdQuestion] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [education, setEducation] = useState('');
+  const [courses, setCourses] = useState('');
 
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (firstQuestion.length > 20 || firstQuestion.length < 3) {
-      return errorMessage(`Please enter a valid name!`);
+    if (fullName.length > 50 || fullName.length < 3) {
+      return errorMessage(`Please enter a valid value!`);
     }
-    if (secondQuestion.length > 20 || secondQuestion.length < 3) {
-      return errorMessage(`Please enter a valid name!`);
+    if (education.length > 50 || education.length < 3) {
+      return errorMessage(`Please enter a valid value!`);
     }
-    if (thirdQuestion.length > 20 || thirdQuestion.length < 3) {
-      return errorMessage(`Please enter a valid name!`);
+    if (courses.length > 50 || courses.length < 3) {
+      return errorMessage(`Please enter a valid value!`);
     }
 
-    dispatch(addFirstAnswer({ firstQuestion, secondQuestion, thirdQuestion }));
+    dispatch(addFirstAnswer({ fullName, education, courses }));
     successMessage(` Successfully sent! `);
-    setFirstQuestion('');
-    setSecondQuestion('');
-    setThirdQuestion('');
+    setFullName('');
+    setEducation('');
+    setCourses('');
   };
 
   return (
     <PersonalAccountWrapper>
       <Form onSubmit={handleSubmit} autoComplete="off">
         <Label>
-          First question
+          Full name
           <Input
-            onChange={e => setFirstQuestion(e.currentTarget.value)}
-            value={firstQuestion}
+            onChange={e => setFullName(e.currentTarget.value)}
+            value={fullName}
             type="text"
-            name="firstQuestion"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            name="fullName"
+            placeholder="Anton Tkachenko"
             required
           />
         </Label>
-
         <Label>
-          Second question
+          Technical education(Yes/No)
           <Input
-            onChange={e => setSecondQuestion(e.currentTarget.value)}
-            value={secondQuestion}
+            onChange={e => setEducation(e.currentTarget.value)}
+            value={education}
             type="text"
-            name="secondQuestion"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            name="education"
+            placeholder="Yes"
             required
           />
         </Label>
-
         <Label>
-          Third question
+          Technical courses(Yes/No)
           <Input
-            onChange={e => setThirdQuestion(e.currentTarget.value)}
-            value={thirdQuestion}
+            onChange={e => setCourses(e.currentTarget.value)}
+            value={courses}
             type="text"
-            name="thirdQuestion"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            name="courses"
+            placeholder="Yes"
             required
           />
         </Label>
-
-        <Btn type="onSubmit">Send</Btn>
+        <Btn type="submit">Send</Btn>
       </Form>
     </PersonalAccountWrapper>
   );

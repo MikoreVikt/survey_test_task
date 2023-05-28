@@ -39,6 +39,36 @@ export const BtnsWrapp = styled.div`
   }
 `;
 
+export const DisBtn = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+  width: 200px;
+  max-height: 49.2px;
+  margin: 0;
+  padding: 20px 15px;
+  color: #fff;
+  background: transparent;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transform: scale(1.3);
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    width: 150px;
+  }
+`;
+
 export const StyledLink = styled(NavLink)`
   display: flex;
   justify-content: center;
