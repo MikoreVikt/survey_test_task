@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunksurvey_test_task=self.webpackChunksurvey_test_task||[]).push([[429],{429:function(e,s,t){t.r(s);var u=t(3329);s.default=function(){return(0,u.jsx)("div",{children:"Second Surveys Results !"})}}}]);
-//# sourceMappingURL=429.df815422.chunk.js.map
