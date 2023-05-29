@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectUserStatus } from 'redux/authRedux/selectors';
 import {
   Wrapp,
@@ -11,8 +11,11 @@ import {
   selectFirstAnswerStatus,
   selectSecondAnswerStatus,
 } from 'redux/surveysRedux/selectors';
+import { fetchFirstPartOfResults } from 'redux/adminRedux/operations';
+import { fetchSecondPartOfResults } from 'redux/adminRedux/operations';
 
 export const PersonalAccount = () => {
+  const dispatch = useDispatch();
   const status = useSelector(selectUserStatus);
 
   const firstAnswerStatus = useSelector(selectFirstAnswerStatus);
@@ -54,10 +57,16 @@ export const PersonalAccount = () => {
         <>
           <Text>Your welcome, ADMIN !</Text>
           <BtnsWrapp>
-            <StyledLink to="/first_surveys_results">
+            <StyledLink
+              to="/first_surveys_results"
+              onClick={() => dispatch(fetchFirstPartOfResults())}
+            >
               First part of the survey
             </StyledLink>
-            <StyledLink to="/second_surveys_results">
+            <StyledLink
+              to="/second_surveys_results"
+              onClick={() => dispatch(fetchSecondPartOfResults())}
+            >
               Second part of the survey
             </StyledLink>
           </BtnsWrapp>
