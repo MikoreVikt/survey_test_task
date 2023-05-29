@@ -13,6 +13,7 @@ import {
 } from 'redux/surveysRedux/selectors';
 import { fetchFirstPartOfResults } from 'redux/adminRedux/operations';
 import { fetchSecondPartOfResults } from 'redux/adminRedux/operations';
+import { infoMessage } from 'services/notifications';
 
 export const PersonalAccount = () => {
   const dispatch = useDispatch();
@@ -47,7 +48,13 @@ export const PersonalAccount = () => {
                 Second part of the survey
               </StyledLink>
             ) : secondAnswerStatus === false ? (
-              <DisBtn>Second part of the survey</DisBtn>
+              <DisBtn
+                onClick={() =>
+                  infoMessage(`Complete the first part of the survey!`)
+                }
+              >
+                Second part of the survey
+              </DisBtn>
             ) : (
               <DisBtn>Answers sent</DisBtn>
             )}

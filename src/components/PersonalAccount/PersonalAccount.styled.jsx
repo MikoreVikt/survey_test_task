@@ -62,6 +62,7 @@ export const DisBtn = styled.div`
   box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   transform: scale(1.3);
+  cursor: pointer;
 
   @media screen and (max-width: 768px) {
     font-size: 14px;

@@ -14,19 +14,32 @@ export const SecondTable = () => {
   names = resIsLoading === false ? (names = result.username) : (names = []);
 
   const handleHelper = () => {
-    let mappedAnswers = answers.map(arr => {
-      return arr.map(({ owner, position, stack, salary }) => {
-        let name = names.find(obj => obj._id === owner);
+    let mappedAnswers =
+      answers !== undefined
+        ? answers.map(arr => {
+            return arr.map(({ owner, position, stack, salary }) => {
+              let name = names.find(obj => obj._id === owner);
 
-        if (name === undefined) {
-          name = 'GUEST';
-        } else {
-          name = name.username;
-        }
+              if (name === undefined) {
+                name = 'GUEST';
+              } else {
+                name = name.username;
+              }
 
-        return { name, owner, position, stack, salary };
-      });
-    });
+              return { name, owner, position, stack, salary };
+            });
+          })
+        : [
+            [
+              {
+                name: 'Name',
+                owner: 'Owner',
+                position: 'Position',
+                stack: 'Stack',
+                salary: 'Salary',
+              },
+            ],
+          ];
 
     return mappedAnswers;
   };
