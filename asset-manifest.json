@@ -1,31 +1,31 @@
 {
   "files": {
     "main.css": "/survey_test_task/static/css/main.80777074.css",
-    "main.js": "/survey_test_task/static/js/main.400de57b.js",
+    "main.js": "/survey_test_task/static/js/main.d1dc4c9e.js",
     "static/js/812.35dfe2e4.chunk.js": "/survey_test_task/static/js/812.35dfe2e4.chunk.js",
     "static/js/751.58249a2c.chunk.js": "/survey_test_task/static/js/751.58249a2c.chunk.js",
     "static/js/637.58d0a224.chunk.js": "/survey_test_task/static/js/637.58d0a224.chunk.js",
-    "static/js/414.23414ed3.chunk.js": "/survey_test_task/static/js/414.23414ed3.chunk.js",
+    "static/js/414.c57c82a3.chunk.js": "/survey_test_task/static/js/414.c57c82a3.chunk.js",
     "static/js/60.721cf90b.chunk.js": "/survey_test_task/static/js/60.721cf90b.chunk.js",
     "static/js/580.38acc7a5.chunk.js": "/survey_test_task/static/js/580.38acc7a5.chunk.js",
-    "static/js/57.3fb0a5b2.chunk.js": "/survey_test_task/static/js/57.3fb0a5b2.chunk.js",
-    "static/js/312.0beba4a2.chunk.js": "/survey_test_task/static/js/312.0beba4a2.chunk.js",
+    "static/js/57.b18ef69a.chunk.js": "/survey_test_task/static/js/57.b18ef69a.chunk.js",
+    "static/js/312.689ff7ae.chunk.js": "/survey_test_task/static/js/312.689ff7ae.chunk.js",
     "static/js/502.201857a7.chunk.js": "/survey_test_task/static/js/502.201857a7.chunk.js",
     "index.html": "/survey_test_task/index.html",
     "main.80777074.css.map": "/survey_test_task/static/css/main.80777074.css.map",
-    "main.400de57b.js.map": "/survey_test_task/static/js/main.400de57b.js.map",
+    "main.d1dc4c9e.js.map": "/survey_test_task/static/js/main.d1dc4c9e.js.map",
     "812.35dfe2e4.chunk.js.map": "/survey_test_task/static/js/812.35dfe2e4.chunk.js.map",
     "751.58249a2c.chunk.js.map": "/survey_test_task/static/js/751.58249a2c.chunk.js.map",
     "637.58d0a224.chunk.js.map": "/survey_test_task/static/js/637.58d0a224.chunk.js.map",
-    "414.23414ed3.chunk.js.map": "/survey_test_task/static/js/414.23414ed3.chunk.js.map",
+    "414.c57c82a3.chunk.js.map": "/survey_test_task/static/js/414.c57c82a3.chunk.js.map",
     "60.721cf90b.chunk.js.map": "/survey_test_task/static/js/60.721cf90b.chunk.js.map",
     "580.38acc7a5.chunk.js.map": "/survey_test_task/static/js/580.38acc7a5.chunk.js.map",
-    "57.3fb0a5b2.chunk.js.map": "/survey_test_task/static/js/57.3fb0a5b2.chunk.js.map",
-    "312.0beba4a2.chunk.js.map": "/survey_test_task/static/js/312.0beba4a2.chunk.js.map",
+    "57.b18ef69a.chunk.js.map": "/survey_test_task/static/js/57.b18ef69a.chunk.js.map",
+    "312.689ff7ae.chunk.js.map": "/survey_test_task/static/js/312.689ff7ae.chunk.js.map",
     "502.201857a7.chunk.js.map": "/survey_test_task/static/js/502.201857a7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.80777074.css",
-    "static/js/main.400de57b.js"
+    "static/js/main.d1dc4c9e.js"
   ]
 }
